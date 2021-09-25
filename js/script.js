@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $(".saveBtn").on("click", function () {
        
-        var text = $(this).siblings(".description").val();
+        var text = $(this).siblings(".index").val();
         var time = $(this).parent().attr("id");
 
       
@@ -40,16 +40,16 @@ $(document).ready(function () {
     }
 
   
-    $("#hour8 .description").val(localStorage.getItem("hour8"));
-    $("#hour9 .description").val(localStorage.getItem("hour9"));
-    $("#hour10 .description").val(localStorage.getItem("hour10"));
-    $("#hour11 .description").val(localStorage.getItem("hour11"));
-    $("#hour12 .description").val(localStorage.getItem("hour12"));
-    $("#hour13 .description").val(localStorage.getItem("hour13"));
-    $("#hour14 .description").val(localStorage.getItem("hour14"));
-    $("#hour15 .description").val(localStorage.getItem("hour15"));
-    $("#hour16 .description").val(localStorage.getItem("hour16"));
-    $("#hour17 .description").val(localStorage.getItem("hour17"));
+    $("#hour8 .description").val(localStorage.getItem("8am"));
+    $("#hour9 .description").val(localStorage.getItem("9am"));
+    $("#hour10 .description").val(localStorage.getItem("10am"));
+    $("#hour11 .description").val(localStorage.getItem("11am"));
+    $("#hour12 .description").val(localStorage.getItem("12am"));
+    $("#hour13 .description").val(localStorage.getItem("1pm"));
+    $("#hour14 .description").val(localStorage.getItem("2pm"));
+    $("#hour15 .description").val(localStorage.getItem("3pm"));
+    $("#hour16 .description").val(localStorage.getItem("4pm"));
+    $("#hour17 .description").val(localStorage.getItem("5pm"));
 
     timeTracker();
 })
