@@ -4,7 +4,7 @@ $("#currentDay").html(todayDate);
 
 $(document).ready(function () {
 
-    $(".saveBtn").on("click", function () {
+    $(".savebtn").on("click", function () {
        
         var text = $(this).siblings(".index").val();
         var time = $(this).parent().attr("id");
