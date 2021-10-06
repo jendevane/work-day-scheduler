@@ -1,46 +1,63 @@
 
 var todayDate = moment().format('dddd, MMM Do YYYY');
 $("#currentDay").html(todayDate);
+window.onload=timeTracker()
 
-$(document).ready(function () {
 
-    $(".savebtn").on("click", function () {
+var save = document.querySelectorAll(".savebtn");
+
+for (var i = 0, len = save.length-1; i < len; i++) {
+    save[i].addEventListener('click', function (e) {
+        var text = e.target.parentNode.children
+        text=text[1].value
+        console.log(text[1])
+        var time = e.target.parentNode.id
+        console.log(time)
        
-        var text = $(this).siblings(".index").val();
-        var time = $(this).parent().attr("id");
-        
-        window.localStorage.setItem
-      
-        localStorage.setItem(time, text);
-    })
-   
-    function timeTracker() {
-       
-        var timeNow = moment().hour();
-
-        $(".time-line").each(function () {
-            var lineTime = parseInt($(this).attr("id").split("hour")[1]);
-
-            if (lineTime < timeNow) {
-                $(this).removeClass("future");
-                $(this).removeClass("present");
-                $(this).addClass("past");
-            }
-            else if (lineTime === timeNow) {
-                $(this).removeClass("past");
-                $(this).removeClass("future");
-                $(this).addClass("present");
-            }
-            else {
-                $(this).removeClass("present");
-                $(this).removeClass("past");
-                $(this).addClass("future");
-
-            }
-        })
+        window.localStorage.setItem(time, text);
+    });
     }
 
+    
   
+   
+function timeTracker() {
+       
+    var timeNow = moment().hour();
+
+    var timeline = document.querySelectorAll(".time-line")
+    for (var i = 0, len = timeline.length; i < len; i++) {
+        console.log(timeline[i])
+        var timelineid = timeline[i].id
+     
+        
+        var hour
+        if (timelineid.length === 3) {
+             hour = parseInt(timelineid.substring(0, 1)) 
+        } else if (timelineid.length === 4){
+             hour = parseInt(timelineid.substring(0, 2))
+        }
+        console.log(hour)
+
+        if (hour < timeNow) {
+            timeline[i].classList.remove("future")
+            timeline[i].classList.remove("present")
+            timeline[i].classList.add("past")
+            
+        } else if (hour===timeNow){
+
+            timeline[i].classList.remove("future")
+            timeline[i].classList.remove("past")
+            timeline[i].classList.add("present")
+            
+        } else {
+            timeline[i].classList.remove("present")
+            timeline[i].classList.remove("past")
+            timeline[i].classList.add("future")
+        }
+            
+        
+    }
     $("#8am .index").val(localStorage.getItem("8am"));
     $("#9am .index").val(localStorage.getItem("9am"));
     $("#10am .index").val(localStorage.getItem("10am"));
@@ -52,5 +69,5 @@ $(document).ready(function () {
     $("#4pm .index").val(localStorage.getItem("4pm"));
     $("#5pm .index").val(localStorage.getItem("5pm"));
 
-    timeTracker();
-})
+}
+  
