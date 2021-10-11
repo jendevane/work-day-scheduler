@@ -58,7 +58,9 @@ function timeTracker() {
             
         
     }
-    $("#8am .index").val(localStorage.getItem("8am"));
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("8am");
+    console.log("8am")
+
     $("#9am .index").val(localStorage.getItem("9am"));
     $("#10am .index").val(localStorage.getItem("10am"));
     $("#11am .index").val(localStorage.getItem("11am"));
