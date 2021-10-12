@@ -8,10 +8,11 @@ var save = document.querySelectorAll(".savebtn");
 
 for (var i = 0, len = save.length-1; i < len; i++) {
     save[i].addEventListener('click', function (e) {
-        var text = e.target.parentNode.children
+        var text = e.currentTarget.parentNode.children
+        console.log(e.target)
         text=text[1].value
         console.log(text[1])
-        var time = e.target.parentNode.id
+        var time = e.currentTarget.parentNode.id
         console.log(time)
        
         window.localStorage.setItem(time, text);
@@ -60,16 +61,18 @@ function timeTracker() {
     }
     document.getElementsByClassName("index").innerHTML = localStorage.getItem("8am");
     console.log("8am")
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("9am");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("10am");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("12pm");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("1pm");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("2pm");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("3pm");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("4pm");
+    document.getElementsByClassName("index").innerHTML = localStorage.getItem("5pm");
+    
 
-    $("#9am .index").val(localStorage.getItem("9am"));
-    $("#10am .index").val(localStorage.getItem("10am"));
-    $("#11am .index").val(localStorage.getItem("11am"));
-    $("#12pm .index").val(localStorage.getItem("12pm"));
-    $("#1pm .index").val(localStorage.getItem("1pm"));
-    $("#2pm .index").val(localStorage.getItem("2pm"));
-    $("#3pm .index").val(localStorage.getItem("3pm"));
-    $("#4pm .index").val(localStorage.getItem("4pm"));
-    $("#5pm .index").val(localStorage.getItem("5pm"));
+
+   
 
 }
   
