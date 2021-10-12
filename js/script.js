@@ -38,6 +38,9 @@ function timeTracker() {
         } else if (timelineid.length === 4){
              hour = parseInt(timelineid.substring(0, 2))
         }
+        if (hour < 6 ) {
+            hour += 12
+        }
         console.log(hour)
 
         if (hour < timeNow) {
@@ -59,16 +62,16 @@ function timeTracker() {
             
         
     }
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("8am");
+    document.getElementsByClassName("index")[0].innerHTML = localStorage.getItem("8am");
     console.log("8am")
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("9am");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("10am");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("12pm");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("1pm");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("2pm");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("3pm");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("4pm");
-    document.getElementsByClassName("index").innerHTML = localStorage.getItem("5pm");
+    document.getElementsByClassName("index")[1].innerHTML = localStorage.getItem("9am");
+    document.getElementsByClassName("index")[2].innerHTML = localStorage.getItem("10am");
+    document.getElementsByClassName("index")[3].innerHTML = localStorage.getItem("12pm");
+    document.getElementsByClassName("index")[4].innerHTML = localStorage.getItem("1pm");
+    document.getElementsByClassName("index")[5].innerHTML = localStorage.getItem("2pm");
+    document.getElementsByClassName("index")[6].innerHTML = localStorage.getItem("3pm");
+    document.getElementsByClassName("index")[7].innerHTML = localStorage.getItem("4pm");
+    document.getElementsByClassName("index")[8].innerHTML = localStorage.getItem("5pm");
     
 
 
